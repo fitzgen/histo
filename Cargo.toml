@@ -1,6 +1,10 @@
 [package]
 authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
+description = "Simple histograms with configurable buckets"
+documentation = "https://docs.rs/histo"
+license = "Apache-2/MIT"
 name = "histo"
+repository = "https://github.com/fitzgen/histo"
 version = "0.1.0"
 
 [[bin]]
