@@ -1,5 +1,7 @@
 # `histo`
 
+[![Build Status](https://travis-ci.org/fitzgen/histo.png?branch=master)](https://travis-ci.org/fitzgen/histo) [![histo on crates.io](https://img.shields.io/crates/v/histo.svg)](https://crates.io/crates/histo) [![histo on docs.rs](https://docs.rs/histo/badge.svg)](https://docs.rs/histo/)
+
 Histograms with a configurable number of buckets, and a terminal-friendly
 `Display`.
 
