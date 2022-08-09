@@ -2,12 +2,13 @@
 authors = ["Nick Fitzgerald <fitzgen@gmail.com>"]
 description = "Simple histograms with configurable buckets"
 documentation = "https://docs.rs/histo"
+edition = "2021"
 keywords = ["histogram", "stddev", "mean"]
 license = "Apache-2.0/MIT"
 name = "histo"
+readme = "README.md"
 repository = "https://github.com/fitzgen/histo"
 version = "0.1.0"
-edition = "2021"
 
 [badges]
 travis-ci = { repository = "fitzgen/histo" }
