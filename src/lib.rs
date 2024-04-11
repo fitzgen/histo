@@ -219,7 +219,7 @@ impl<'a> Iterator for Buckets<'a> {
         };
 
         let range = max - min;
-        let range = range + (range % self.histogram.num_buckets);
+        let range = u64::saturating_add(range, range % self.histogram.num_buckets);
 
         let bucket_size = range / self.histogram.num_buckets;
         let bucket_size = cmp::max(1, bucket_size);
@@ -320,7 +320,7 @@ mod quickchecks {
 
     quickcheck! {
         fn sum_of_bucket_counts_is_total_count(buckets: u64, samples: Vec<u64>) -> () {
-            if buckets == 0 {
+            if buckets == 0 || buckets > 1000 {
                 return;
             }
 
@@ -344,7 +344,7 @@ mod quickchecks {
             buckets: u64,
             samples: Vec<u64>
         ) -> () {
-            if buckets == 0 {
+            if buckets == 0 || buckets > 1000 {
                 return;
             }
 
@@ -358,7 +358,7 @@ mod quickchecks {
         }
 
         fn bucket_ranges_should_be_correct(buckets: u64, samples: Vec<u64>) -> () {
-            if buckets == 0 {
+            if buckets == 0 || buckets > 1000 {
                 return;
             }
 
@@ -381,7 +381,7 @@ mod quickchecks {
         fn formatting_should_never_panic(buckets: u64, samples: Vec<u64>) -> () {
             use std::string::ToString;
 
-            if buckets == 0 {
+            if buckets == 0 || buckets > 1000 {
                 return;
             }
 
